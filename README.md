@@ -13,20 +13,21 @@ A multi-lingual save data decoding and repacking tool designed specifically for 
 
 ## Usage
 1. Place `SiNiSaveFilar2.ps1` and `Run_SiNiSaveFilar2.bat` in the same directory as your SiNiSistar2 save files.
-   - *Default Save Path on Windows:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
+   - *DLsite Version Path:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
+   - *Steam Version Path:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. Double-click **`Run_SiNiSaveFilar2.bat`** to launch the tool.
    - *(Note: Using the `.bat` file automatically bypasses PowerShell execution policy restrictions, allowing the script to run safely with a double-click).*
 3. Follow the on-screen TUI to select your language and choose an operation:
    - **[1] Decode Saves**: Extracts your saves into a newly created `<timestamp>_SaveData_decoded` folder and backs up the originals to `<timestamp>_SaveData_backup`.
    - **Edit**: Open the extracted `.json` files using any text editor (e.g., Notepad, VSCode) to modify in-game variables such as `m_PlayerName`, items, or stats.
    - **[2] Encode Saves**: Select your modified folder in the tool to repack the edited JSONs into `<timestamp>_SaveData_encoded`.
-4. Copy the newly repacked files from the `encoded` folder back into the root `SaveData` directory, overwriting the originals.
-5. Launch the game and enjoy your modifications!
+4. Copy the newly repacked files from the `encoded` folder back into your root `SaveData` (or `SaveData_S`) directory, overwriting the originals.
+5. Launch the game.
 
 ## Disclaimer
 
 **USE AT YOUR OWN RISK.** Modifying game save data can lead to unpredictable game behavior, crashes, or irreversible save file corruption. 
-- While this tool attempts to create automated backups, manual backups of your `SaveData` folder are highly recommended before use.
+- While this tool attempts to create automated backups, manual backups of your save folder are highly recommended before use.
 - The author of this tool is **NOT** responsible for any lost progress, corrupted data, or other damages resulting from the use or misuse of this script.
 
 **NOT AFFILIATED:** SiNiSaveFilar2 is an unofficial, community-made tool. It is **NOT** affiliated with, endorsed by, maintained by, or in any way officially connected to **Uu** (the official development team of SiNiSistar2) or their partners. All product names, logos, and brands are property of their respective owners.

@@ -13,20 +13,21 @@
 
 ## 使用方法
 1. 將 `SiNiSaveFilar2.ps1` 和 `Run_SiNiSaveFilar2.bat` 放置在與您的 SiNiSistar2 存檔文件相同的目錄中。
-   - *Windows 預設存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
+   - *DLsite 版存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
+   - *Steam 版存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. 雙擊 **`Run_SiNiSaveFilar2.bat`** 啟動工具。
    - *(註：使用 `.bat` 文件會自動繞過 PowerShell 的執行策略限制，只需雙擊即可安全運行)*。
 3. 按照螢幕上的 TUI 提示選擇您的語言及需要執行的操作：
    - **[1] 解密存檔 (Decode Saves)**：將存檔提取到一個新創建的 `<timestamp>_SaveData_decoded` 資料夾中，並將原文件備份到 `<timestamp>_SaveData_backup`。
    - **編輯 (Edit)**：使用任意文字編輯器（如記事本、VSCode）打開提取出的 `.json` 文件，修改遊戲內變數（如 `m_PlayerName`、物品或屬性等）。
    - **[2] 加密存檔 (Encode Saves)**：在工具中選擇您修改過的資料夾，將編輯過的 JSON 重新打包到 `<timestamp>_SaveData_encoded` 資料夾中。
-4. 將 `encoded` 資料夾中新打包好的文件複製回根目錄的 `SaveData` 資料夾中，覆蓋原始文件。
-5. 啟動遊戲，享受您的修改成果！
+4. 將 `encoded` 資料夾中新打包好的文件複製回根目錄的 `SaveData`（或 `SaveData_S`）資料夾中，覆蓋原始文件。
+5. 啟動遊戲。
 
 ## 免責聲明
 
 **請自行承擔使用風險。** 修改遊戲存檔資料可能會導致不可預測的遊戲行為、崩潰或不可逆的存檔損壞。
-- 雖然本工具會嘗試自動創建備份，但強烈建議您在使用前手動備份整個 `SaveData` 資料夾。
+- 雖然本工具會嘗試自動創建備份，但強烈建議您在使用前手動備份整個存檔資料夾。
 - 對於因使用或濫用本腳本而導致的任何進度遺失、資料損壞或其他損失，本工具作者概**不負責**。
 
 **無關聯聲明：** SiNiSaveFilar2 是一個非官方的社群自製工具。它與 **Uu**（SiNiSistar2 的官方開發團隊）及其合作夥伴**沒有任何關聯、背書或官方聯繫**。所有產品名稱、標誌和品牌均為其各自所有者的財產。
