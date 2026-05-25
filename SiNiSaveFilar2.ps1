@@ -1,4 +1,4 @@
-<#
+﻿<#
     SiNiSaveFilar2 - SiNiSistar2 Save Tool
     Copyright (C) 2026 Akiloneus
 
