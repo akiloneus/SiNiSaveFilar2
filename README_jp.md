@@ -16,7 +16,8 @@
 - **スマート再パック (Encode)**: 変更したJSONデータを、ゲームエンジンが読み込めるようにネイティブの難読化・エンコード形式にシームレスに再パックします。
 
 ## 使用方法
-1. 本リポジトリの `scripts/powershell/` ディレクトリに移動し、`SiNiSaveFilar2.ps1` と `Run_SiNiSaveFilar2.bat` を SiNiSistar2 のセーブデータと同じディレクトリに配置します。
+1. **[推奨]** [Releases](https://github.com/akiloneus/SiNiSaveFilar2/releases/latest) ページから最新の `.zip` リリースをダウンロードして解凍し、その中にある `SiNiSaveFilar2.ps1` と `Run_SiNiSaveFilar2.bat` を SiNiSistar2 のセーブデータと同じディレクトリに配置します。
+   - *(リポジトリのソースコードを使用する場合は、`scripts/powershell/` ディレクトリに移動してください)*。
    - *DLsite 版の保存パス:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
    - *Steam 版の保存パス:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. **`Run_SiNiSaveFilar2.bat`** をダブルクリックしてツールを起動します。

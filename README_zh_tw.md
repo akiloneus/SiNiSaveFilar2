@@ -16,7 +16,8 @@
 - **智能打包 (Encode)**：將您修改後的 JSON 資料無縫重新打包回遊戲原生的混淆編碼格式，確保遊戲引擎可以完美讀取。
 
 ## 使用方法
-1. 進入本倉庫的 `scripts/powershell/` 目錄，將 `SiNiSaveFilar2.ps1` 和 `Run_SiNiSaveFilar2.bat` 放置在與您的 SiNiSistar2 存檔文件相同的目錄中。
+1. **[推薦]** 前往 [Releases](https://github.com/akiloneus/SiNiSaveFilar2/releases/latest) 頁面下載最新的 `.zip` 壓縮包並解壓，將其中的 `SiNiSaveFilar2.ps1` 和 `Run_SiNiSaveFilar2.bat` 放置在與您的 SiNiSistar2 存檔文件相同的目錄中。
+   - *(如果您是直接下載的本倉庫源碼，請進入 `scripts/powershell/` 目錄獲取這兩個文件)*。
    - *DLsite 版存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
    - *Steam 版存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. 雙擊 **`Run_SiNiSaveFilar2.bat`** 啟動工具。
