@@ -1,110 +1,128 @@
+<#
+    SiNiSaveFilar2 - SiNiSistar2 Save Tool
+    Copyright (C) 2026 Akiloneus
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#>
+
 $scriptDir = $PSScriptRoot
 if (-not $scriptDir) { $scriptDir = $PWD.Path }
 
 $global:LangData = @{
-    "en" = @{
-        "Title" = "SiNiSaveFilar2 - SiNiSistar2 Save Tool"
-        "MenuDecode" = "1. Decode Saves (Read and decode from script directory)"
-        "MenuEncode" = "2. Encode Saves (Repack modified JSON into save files)"
-        "MenuExit" = "0. Exit"
-        "SelectOp" = "Please select an operation:`n"
-        "MoveCursor" = "[Up/Down]: Move cursor    [Enter]: Confirm`n"
-        "MoveCursorMulti" = "[Up/Down]: Move       [Space]: Check/Uncheck"
-        "MultiBottom" = "[A]: Select All       [Enter]: Confirm"
-        "CancelEsc" = "[Esc/Q]: Cancel`n"
+    "en"    = @{
+        "Title"            = "SiNiSaveFilar2 - SiNiSistar2 Save Tool"
+        "MenuDecode"       = "1. Decode Saves (Read and decode from script directory)"
+        "MenuEncode"       = "2. Encode Saves (Repack modified JSON into save files)"
+        "MenuExit"         = "0. Exit"
+        "SelectOp"         = "Please select an operation:`n"
+        "MoveCursor"       = "[Up/Down]: Move cursor    [Enter]: Confirm`n"
+        "MoveCursorMulti"  = "[Up/Down]: Move       [Space]: Check/Uncheck"
+        "MultiBottom"      = "[A]: Select All       [Enter]: Confirm"
+        "CancelEsc"        = "[Esc/Q]: Cancel`n"
         "MoveCursorSingle" = "[Up/Down]: Move       [Enter]: Confirm"
-        "NoSavesFound" = "No obfuscated save files found in {0}!"
-        "PressAnyKey" = "Press any key to return to menu..."
-        "SelectDecode" = "Please select the save files to [Decode]:"
-        "DecodeSuccess" = "Successfully decoded: {0} -> {1}"
-        "ExtractedThumb" = "  - Extracted thumbnail: {0}"
-        "DecodeComplete" = "`nDecoding complete! Files saved to: {0}"
-        "NoDecodedDirs" = "No _SaveData_decoded folders found. Please decode saves first!"
-        "SelectFolder" = "Please select the [Folder] containing your modified JSON files:"
-        "NoJsonFiles" = "No .json files found in the selected folder!"
-        "SelectEncode" = "Please select the files to [Encode] and repack:"
-        "EncodeSuccess" = "Successfully encoded: {0} -> {1}{2}"
-        "IncludesThumb" = " (Includes thumbnail)"
-        "EncodeComplete" = "`nRepacking complete! Encoded saves stored in: {0}"
-        "CopyBack" = "You can now copy these files back to your game's save directory to overwrite the original saves."
+        "NoSavesFound"     = "No obfuscated save files found in {0}!"
+        "PressAnyKey"      = "Press any key to return to menu..."
+        "SelectDecode"     = "Please select the save files to [Decode]:"
+        "DecodeSuccess"    = "Successfully decoded: {0} -> {1}"
+        "ExtractedThumb"   = "  - Extracted thumbnail: {0}"
+        "DecodeComplete"   = "`nDecoding complete! Files saved to: {0}"
+        "NoDecodedDirs"    = "No _SaveData_decoded folders found. Please decode saves first!"
+        "SelectFolder"     = "Please select the [Folder] containing your modified JSON files:"
+        "NoJsonFiles"      = "No .json files found in the selected folder!"
+        "SelectEncode"     = "Please select the files to [Encode] and repack:"
+        "EncodeSuccess"    = "Successfully encoded: {0} -> {1}{2}"
+        "IncludesThumb"    = " (Includes thumbnail)"
+        "EncodeComplete"   = "`nRepacking complete! Encoded saves stored in: {0}"
+        "CopyBack"         = "You can now copy these files back to your game's save directory to overwrite the original saves."
     }
     "zh-CN" = @{
-        "Title" = "SiNiSaveFilar2 - SiNiSistar2 存档加解密工具"
-        "MenuDecode" = "1. 解密存档 (从脚本所在目录读取并解密)"
-        "MenuEncode" = "2. 加密存档 (将修改后的 JSON 重新打包)"
-        "MenuExit" = "0. 退出"
-        "SelectOp" = "请选择一个操作：`n"
-        "MoveCursor" = "[上下键]: 移动光标    [回车]: 确认`n"
-        "MoveCursorMulti" = "[上下键]: 移动        [空格]: 选中/取消"
-        "MultiBottom" = "[A]: 全选             [回车]: 确认"
-        "CancelEsc" = "[Esc/Q]: 取消返回`n"
+        "Title"            = "SiNiSaveFilar2 - SiNiSistar2 存档加解密工具"
+        "MenuDecode"       = "1. 解密存档 (从脚本所在目录读取并解密)"
+        "MenuEncode"       = "2. 加密存档 (将修改后的 JSON 重新打包)"
+        "MenuExit"         = "0. 退出"
+        "SelectOp"         = "请选择一个操作：`n"
+        "MoveCursor"       = "[上下键]: 移动光标    [回车]: 确认`n"
+        "MoveCursorMulti"  = "[上下键]: 移动        [空格]: 选中/取消"
+        "MultiBottom"      = "[A]: 全选             [回车]: 确认"
+        "CancelEsc"        = "[Esc/Q]: 取消返回`n"
         "MoveCursorSingle" = "[上下键]: 移动        [回车]: 确认"
-        "NoSavesFound" = "在 {0} 中未找到混淆的存档文件！"
-        "PressAnyKey" = "按任意键返回菜单..."
-        "SelectDecode" = "请选择需要【解密 (Decode)】的存档文件："
-        "DecodeSuccess" = "成功解密: {0} -> {1}"
-        "ExtractedThumb" = "  - 提取缩略图: {0}"
-        "DecodeComplete" = "`n解密完成！文件已保存至: {0}"
-        "NoDecodedDirs" = "未找到任何 _SaveData_decoded 文件夹。请先解密存档！"
-        "SelectFolder" = "请选择包含您修改后 JSON 的【文件夹】："
-        "NoJsonFiles" = "选中的文件夹中没有找到 .json 文件！"
-        "SelectEncode" = "请选择需要【加密 (Encode)】并重新打包的文件："
-        "EncodeSuccess" = "成功加密: {0} -> {1}{2}"
-        "IncludesThumb" = " (包含缩略图)"
-        "EncodeComplete" = "`n打包完成！加密存档已保存至: {0}"
-        "CopyBack" = "您现在可以直接将这些文件复制回游戏的存档目录来覆盖原存档。"
+        "NoSavesFound"     = "在 {0} 中未找到混淆的存档文件！"
+        "PressAnyKey"      = "按任意键返回菜单..."
+        "SelectDecode"     = "请选择需要【解密 (Decode)】的存档文件："
+        "DecodeSuccess"    = "成功解密: {0} -> {1}"
+        "ExtractedThumb"   = "  - 提取缩略图: {0}"
+        "DecodeComplete"   = "`n解密完成！文件已保存至: {0}"
+        "NoDecodedDirs"    = "未找到任何 _SaveData_decoded 文件夹。请先解密存档！"
+        "SelectFolder"     = "请选择包含您修改后 JSON 的【文件夹】："
+        "NoJsonFiles"      = "选中的文件夹中没有找到 .json 文件！"
+        "SelectEncode"     = "请选择需要【加密 (Encode)】并重新打包的文件："
+        "EncodeSuccess"    = "成功加密: {0} -> {1}{2}"
+        "IncludesThumb"    = " (包含缩略图)"
+        "EncodeComplete"   = "`n打包完成！加密存档已保存至: {0}"
+        "CopyBack"         = "您现在可以直接将这些文件复制回游戏的存档目录来覆盖原存档。"
     }
     "zh-TW" = @{
-        "Title" = "SiNiSaveFilar2 - SiNiSistar2 存檔加解密工具"
-        "MenuDecode" = "1. 解密存檔 (從腳本所在目錄讀取並解密)"
-        "MenuEncode" = "2. 加密存檔 (將修改後的 JSON 重新打包)"
-        "MenuExit" = "0. 退出"
-        "SelectOp" = "請選擇一個操作：`n"
-        "MoveCursor" = "[上下鍵]: 移動游標    [Enter]: 確認`n"
-        "MoveCursorMulti" = "[上下鍵]: 移動        [空白鍵]: 選取/取消"
-        "MultiBottom" = "[A]: 全選             [Enter]: 確認"
-        "CancelEsc" = "[Esc/Q]: 取消返回`n"
+        "Title"            = "SiNiSaveFilar2 - SiNiSistar2 存檔加解密工具"
+        "MenuDecode"       = "1. 解密存檔 (從腳本所在目錄讀取並解密)"
+        "MenuEncode"       = "2. 加密存檔 (將修改後的 JSON 重新打包)"
+        "MenuExit"         = "0. 退出"
+        "SelectOp"         = "請選擇一個操作：`n"
+        "MoveCursor"       = "[上下鍵]: 移動游標    [Enter]: 確認`n"
+        "MoveCursorMulti"  = "[上下鍵]: 移動        [空白鍵]: 選取/取消"
+        "MultiBottom"      = "[A]: 全選             [Enter]: 確認"
+        "CancelEsc"        = "[Esc/Q]: 取消返回`n"
         "MoveCursorSingle" = "[上下鍵]: 移動        [Enter]: 確認"
-        "NoSavesFound" = "在 {0} 中未找到混淆的存檔文件！"
-        "PressAnyKey" = "按任意鍵返回選單..."
-        "SelectDecode" = "請選擇需要【解密 (Decode)】的存檔文件："
-        "DecodeSuccess" = "成功解密: {0} -> {1}"
-        "ExtractedThumb" = "  - 提取縮略圖: {0}"
-        "DecodeComplete" = "`n解密完成！文件已保存至: {0}"
-        "NoDecodedDirs" = "未找到任何 _SaveData_decoded 資料夾。請先解密存檔！"
-        "SelectFolder" = "請選擇包含您修改後 JSON 的【資料夾】："
-        "NoJsonFiles" = "選中的資料夾中沒有找到 .json 文件！"
-        "SelectEncode" = "請選擇需要【加密 (Encode)】並重新打包的文件："
-        "EncodeSuccess" = "成功加密: {0} -> {1}{2}"
-        "IncludesThumb" = " (包含縮略圖)"
-        "EncodeComplete" = "`n打包完成！加密存檔已保存至: {0}"
-        "CopyBack" = "您現在可以直接將這些文件複製回遊戲的存檔目錄來覆蓋原存檔。"
+        "NoSavesFound"     = "在 {0} 中未找到混淆的存檔文件！"
+        "PressAnyKey"      = "按任意鍵返回選單..."
+        "SelectDecode"     = "請選擇需要【解密 (Decode)】的存檔文件："
+        "DecodeSuccess"    = "成功解密: {0} -> {1}"
+        "ExtractedThumb"   = "  - 提取縮略圖: {0}"
+        "DecodeComplete"   = "`n解密完成！文件已保存至: {0}"
+        "NoDecodedDirs"    = "未找到任何 _SaveData_decoded 資料夾。請先解密存檔！"
+        "SelectFolder"     = "請選擇包含您修改後 JSON 的【資料夾】："
+        "NoJsonFiles"      = "選中的資料夾中沒有找到 .json 文件！"
+        "SelectEncode"     = "請選擇需要【加密 (Encode)】並重新打包的文件："
+        "EncodeSuccess"    = "成功加密: {0} -> {1}{2}"
+        "IncludesThumb"    = " (包含縮略圖)"
+        "EncodeComplete"   = "`n打包完成！加密存檔已保存至: {0}"
+        "CopyBack"         = "您現在可以直接將這些文件複製回遊戲的存檔目錄來覆蓋原存檔。"
     }
-    "ja" = @{
-        "Title" = "SiNiSaveFilar2 - SiNiSistar2 セーブデータツール"
-        "MenuDecode" = "1. 復号化 (スクリプトディレクトリから読み込み)"
-        "MenuEncode" = "2. 暗号化 (変更したJSONを再パック)"
-        "MenuExit" = "0. 終了"
-        "SelectOp" = "操作を選択してください:`n"
-        "MoveCursor" = "[上下キー]: 移動      [Enter]: 決定`n"
-        "MoveCursorMulti" = "[上下キー]: 移動      [Space]: 選択/解除"
-        "MultiBottom" = "[A]: 全て選択         [Enter]: 決定"
-        "CancelEsc" = "[Esc/Q]: キャンセル`n"
+    "ja"    = @{
+        "Title"            = "SiNiSaveFilar2 - SiNiSistar2 セーブデータツール"
+        "MenuDecode"       = "1. 復号化 (スクリプトディレクトリから読み込み)"
+        "MenuEncode"       = "2. 暗号化 (変更したJSONを再パック)"
+        "MenuExit"         = "0. 終了"
+        "SelectOp"         = "操作を選択してください:`n"
+        "MoveCursor"       = "[上下キー]: 移動      [Enter]: 決定`n"
+        "MoveCursorMulti"  = "[上下キー]: 移動      [Space]: 選択/解除"
+        "MultiBottom"      = "[A]: 全て選択         [Enter]: 決定"
+        "CancelEsc"        = "[Esc/Q]: キャンセル`n"
         "MoveCursorSingle" = "[上下キー]: 移動      [Enter]: 決定"
-        "NoSavesFound" = "{0} に難読化されたセーブデータが見つかりません！"
-        "PressAnyKey" = "何かキーを押してメニューに戻る..."
-        "SelectDecode" = "【復号化 (Decode)】するセーブデータを選択してください:"
-        "DecodeSuccess" = "復号化成功: {0} -> {1}"
-        "ExtractedThumb" = "  - サムネイル抽出: {0}"
-        "DecodeComplete" = "`n復号化完了！保存先: {0}"
-        "NoDecodedDirs" = "_SaveData_decoded フォルダが見つかりません。先に復号化を行ってください！"
-        "SelectFolder" = "変更したJSONが含まれる【フォルダ】を選択してください:"
-        "NoJsonFiles" = "選択したフォルダに .json ファイルが見つかりません！"
-        "SelectEncode" = "【暗号化 (Encode)】して再パックするファイルを選択してください:"
-        "EncodeSuccess" = "暗号化成功: {0} -> {1}{2}"
-        "IncludesThumb" = " (サムネイルを含む)"
-        "EncodeComplete" = "`n再パック完了！保存先: {0}"
-        "CopyBack" = "これらのファイルをゲームのセーブデータディレクトリにコピーして、元のセーブデータを上書きできます。"
+        "NoSavesFound"     = "{0} に難読化されたセーブデータが見つかりません！"
+        "PressAnyKey"      = "何かキーを押してメニューに戻る..."
+        "SelectDecode"     = "【復号化 (Decode)】するセーブデータを選択してください:"
+        "DecodeSuccess"    = "復号化成功: {0} -> {1}"
+        "ExtractedThumb"   = "  - サムネイル抽出: {0}"
+        "DecodeComplete"   = "`n復号化完了！保存先: {0}"
+        "NoDecodedDirs"    = "_SaveData_decoded フォルダが見つかりません。先に復号化を行ってください！"
+        "SelectFolder"     = "変更したJSONが含まれる【フォルダ】を選択してください:"
+        "NoJsonFiles"      = "選択したフォルダに .json ファイルが見つかりません！"
+        "SelectEncode"     = "【暗号化 (Encode)】して再パックするファイルを選択してください:"
+        "EncodeSuccess"    = "暗号化成功: {0} -> {1}{2}"
+        "IncludesThumb"    = " (サムネイルを含む)"
+        "EncodeComplete"   = "`n再パック完了！保存先: {0}"
+        "CopyBack"         = "これらのファイルをゲームのセーブデータディレクトリにコピーして、元のセーブデータを上書きできます。"
     }
 }
 
@@ -145,15 +163,18 @@ function Select-Language {
         }
         
         $key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        if ($key.VirtualKeyCode -eq 38) { # Up
+        if ($key.VirtualKeyCode -eq 38) {
+            # Up
             if ($cursor -gt 0) { $cursor-- }
             $needsRedraw = $true
         }
-        elseif ($key.VirtualKeyCode -eq 40) { # Down
+        elseif ($key.VirtualKeyCode -eq 40) {
+            # Down
             if ($cursor -lt ($options.Count - 1)) { $cursor++ }
             $needsRedraw = $true
         }
-        elseif ($key.VirtualKeyCode -eq 13) { # Enter
+        elseif ($key.VirtualKeyCode -eq 13) {
+            # Enter
             $global:CurrentLang = $options[$cursor].Code
             return
         }
