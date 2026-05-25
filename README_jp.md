@@ -3,6 +3,11 @@
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
+<p align="center">
+  <img src="assets/images/preview_01.png" width="49%" />
+  <img src="assets/images/preview_02.png" width="49%" />
+</p>
+
 **SiNiSistar2** 専用に設計された、多言語対応のセーブデータ復号化・再パックツールです。*（注：本プロジェクトは現在、Windows PowerShell スクリプトとして実装されています）*。
 
 ## 主な機能
@@ -12,7 +17,7 @@
 - **スマート再パック (Encode)**: 変更したJSONデータを、ゲームエンジンが読み込めるようにネイティブの難読化・エンコード形式にシームレスに再パックします。
 
 ## 使用方法
-1. `SiNiSaveFilar2.ps1` と `Run_SiNiSaveFilar2.bat` を SiNiSistar2 のセーブデータと同じディレクトリに配置します。
+1. 本リポジトリの `scripts/powershell/` ディレクトリに移動し、`SiNiSaveFilar2.ps1` と `Run_SiNiSaveFilar2.bat` を SiNiSistar2 のセーブデータと同じディレクトリに配置します。
    - *DLsite 版の保存パス:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
    - *Steam 版の保存パス:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. **`Run_SiNiSaveFilar2.bat`** をダブルクリックしてツールを起動します。

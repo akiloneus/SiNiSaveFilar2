@@ -3,6 +3,11 @@
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
+<p align="center">
+  <img src="assets/images/preview_01.png" width="49%" />
+  <img src="assets/images/preview_02.png" width="49%" />
+</p>
+
 一款專為遊戲 **SiNiSistar2** 設計的多語言存檔解密與重新打包工具。*（註：本專案目前純粹基於 Windows PowerShell 腳本實現）*。
 
 ## 功能特點
@@ -12,7 +17,7 @@
 - **智能打包 (Encode)**：將您修改後的 JSON 資料無縫重新打包回遊戲原生的混淆編碼格式，確保遊戲引擎可以完美讀取。
 
 ## 使用方法
-1. 將 `SiNiSaveFilar2.ps1` 和 `Run_SiNiSaveFilar2.bat` 放置在與您的 SiNiSistar2 存檔文件相同的目錄中。
+1. 進入本倉庫的 `scripts/powershell/` 目錄，將 `SiNiSaveFilar2.ps1` 和 `Run_SiNiSaveFilar2.bat` 放置在與您的 SiNiSistar2 存檔文件相同的目錄中。
    - *DLsite 版存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
    - *Steam 版存檔路徑：* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. 雙擊 **`Run_SiNiSaveFilar2.bat`** 啟動工具。

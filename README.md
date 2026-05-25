@@ -3,6 +3,11 @@
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
+<p align="center">
+  <img src="assets/images/preview_01.png" width="49%" />
+  <img src="assets/images/preview_02.png" width="49%" />
+</p>
+
 A multi-lingual save data decoding and repacking tool designed specifically for the game **SiNiSistar2**. *(Note: This project is currently implemented purely as a Windows PowerShell script).*
 
 ## Features
@@ -12,7 +17,7 @@ A multi-lingual save data decoding and repacking tool designed specifically for 
 - **Smart Repacking (Encode)**: Seamlessly repacks your modified JSON data back into the game's native obfuscated and encoded format, ready to be loaded by the game engine.
 
 ## Usage
-1. Place `SiNiSaveFilar2.ps1` and `Run_SiNiSaveFilar2.bat` in the same directory as your SiNiSistar2 save files.
+1. Navigate to the `scripts/powershell/` directory in this repository and place `SiNiSaveFilar2.ps1` and `Run_SiNiSaveFilar2.bat` in the same directory as your SiNiSistar2 save files.
    - *DLsite Version Path:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData`
    - *Steam Version Path:* `%USERPROFILE%\AppData\LocalLow\Uu\SiNiSistar2\SaveData_S`
 2. Double-click **`Run_SiNiSaveFilar2.bat`** to launch the tool.
