@@ -3,12 +3,11 @@
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
-<p align="center">
-  <img src="assets/images/preview_01.png" width="49%" />
-  <img src="assets/images/preview_02.png" width="49%" />
-</p>
+<img src="assets/images/preview_01.png" width="49%" /> <img src="assets/images/preview_02.png" width="49%" />
 
 A multi-lingual save data decoding and repacking tool designed specifically for the game **SiNiSistar2**. *(Note: This project is currently implemented purely as a Windows PowerShell script).*
+
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest_Release-2ea44f?style=for-the-badge&logo=github)](https://github.com/akiloneus/SiNiSaveFilar2/releases/latest)
 
 ## Features
 - **Interactive TUI**: An easy-to-use Terminal User Interface with full multi-language support (English, Simplified Chinese, Traditional Chinese, Japanese).

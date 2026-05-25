@@ -3,12 +3,11 @@
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
-<p align="center">
-  <img src="assets/images/preview_01.png" width="49%" />
-  <img src="assets/images/preview_02.png" width="49%" />
-</p>
+<img src="assets/images/preview_01.png" width="49%" /> <img src="assets/images/preview_02.png" width="49%" />
 
 **SiNiSistar2** 専用に設計された、多言語対応のセーブデータ復号化・再パックツールです。*（注：本プロジェクトは現在、Windows PowerShell スクリプトとして実装されています）*。
+
+[![Download Latest Release](https://img.shields.io/badge/ダウンロード-最新のRelease-2ea44f?style=for-the-badge&logo=github)](https://github.com/akiloneus/SiNiSaveFilar2/releases/latest)
 
 ## 主な機能
 - **対話型 TUI**: 使いやすいターミナルユーザーインターフェース。多言語（英語、簡体字中国語、繁体字中国語、日本語）を完全サポート。

@@ -3,12 +3,11 @@
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
-<p align="center">
-  <img src="assets/images/preview_01.png" width="49%" />
-  <img src="assets/images/preview_02.png" width="49%" />
-</p>
+<img src="assets/images/preview_01.png" width="49%" /> <img src="assets/images/preview_02.png" width="49%" />
 
 一款专为游戏 **SiNiSistar2** 设计的多语言存档解密与重新打包工具。*（注：本项目目前纯粹基于 Windows PowerShell 脚本实现）*。
+
+[![Download Latest Release](https://img.shields.io/badge/下载-最新版本(Release)-2ea44f?style=for-the-badge&logo=github)](https://github.com/akiloneus/SiNiSaveFilar2/releases/latest)
 
 ## 功能特点
 - **交互式 TUI 菜单**：简单易用的终端用户界面，全面支持多语言（英语、简体中文、繁体中文、日语）。
