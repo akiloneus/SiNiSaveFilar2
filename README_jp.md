@@ -1,9 +1,9 @@
-[English](README.md) | [简体中文](README_zh_cn.md) | [繁體中文](README_zh_tw.md) | [日本語](README_jp.md)
+[English](README.md) | [日本語](README_jp.md) | [简体中文](README_zh_cn.md) | [繁體中文](README_zh_tw.md)
 ---
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
-**SiNiSistar2** 専用に設計された、多言語対応のセーブデータ復号化・再パックツールです。
+**SiNiSistar2** 専用に設計された、多言語対応のセーブデータ復号化・再パックツールです。*（注：本プロジェクトは現在、Windows PowerShell スクリプトとして実装されています）*。
 
 ## 主な機能
 - **対話型 TUI**: 使いやすいターミナルユーザーインターフェース。多言語（英語、簡体字中国語、繁体字中国語、日本語）を完全サポート。

@@ -1,9 +1,9 @@
-[English](README.md) | [简体中文](README_zh_cn.md) | [繁體中文](README_zh_tw.md) | [日本語](README_jp.md)
+[English](README.md) | [日本語](README_jp.md) | [简体中文](README_zh_cn.md) | [繁體中文](README_zh_tw.md)
 ---
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
-一款專為遊戲 **SiNiSistar2** 設計的多語言存檔解密與重新打包工具。
+一款專為遊戲 **SiNiSistar2** 設計的多語言存檔解密與重新打包工具。*（註：本專案目前純粹基於 Windows PowerShell 腳本實現）*。
 
 ## 功能特點
 - **互動式 TUI 選單**：簡單易用的終端機使用者介面，全面支援多語言（英語、簡體中文、繁體中文、日語）。

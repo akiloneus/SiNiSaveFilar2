@@ -141,17 +141,17 @@ function Select-Language {
     $needsRedraw = $true
     $options = @(
         @{ Label = "English"; Code = "en" },
+        @{ Label = "日本語"; Code = "ja" },
         @{ Label = "简体中文"; Code = "zh-CN" },
-        @{ Label = "繁體中文"; Code = "zh-TW" },
-        @{ Label = "日本語"; Code = "ja" }
+        @{ Label = "繁體中文"; Code = "zh-TW" }
     )
     
     while ($true) {
         if ($needsRedraw) {
             Clear-Host
             Write-Host "==========================================" -ForegroundColor Cyan
-            Write-Host "Choose your language / 请选择您的语言" -ForegroundColor White
-            Write-Host "請選擇您的語言 / 言語を選択してください:" -ForegroundColor White
+            Write-Host "Choose your language / 言語を選択してください:" -ForegroundColor White
+            Write-Host "请选择您的语言 / 請選擇您的語言:" -ForegroundColor White
             Write-Host "==========================================`n" -ForegroundColor Cyan
             
             for ($i = 0; $i -lt $options.Count; $i++) {

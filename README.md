@@ -1,9 +1,9 @@
-[English](README.md) | [简体中文](README_zh_cn.md) | [繁體中文](README_zh_tw.md) | [日本語](README_jp.md)
+[English](README.md) | [日本語](README_jp.md) | [简体中文](README_zh_cn.md) | [繁體中文](README_zh_tw.md)
 ---
 
 # SiNiSaveFilar2 - SiNiSistar2 Save Tool
 
-A multi-lingual save data decoding and repacking tool designed specifically for the game **SiNiSistar2**. 
+A multi-lingual save data decoding and repacking tool designed specifically for the game **SiNiSistar2**. *(Note: This project is currently implemented purely as a Windows PowerShell script).*
 
 ## Features
 - **Interactive TUI**: An easy-to-use Terminal User Interface with full multi-language support (English, Simplified Chinese, Traditional Chinese, Japanese).
